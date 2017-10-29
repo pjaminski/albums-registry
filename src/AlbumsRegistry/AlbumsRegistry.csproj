@@ -199,7 +199,21 @@
     <Compile Include="Migrations\201710251833150_InitialModel.Designer.cs">
       <DependentUpon>201710251833150_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710261833549_OverrideConventionForModels.cs" />
+    <Compile Include="Migrations\201710261833549_OverrideConventionForModels.Designer.cs">
+      <DependentUpon>201710261833549_OverrideConventionForModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Resources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resources.en-GB..Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.en-GB..resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="ViewModels\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
@@ -207,12 +221,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app.html" />
+    <Content Include="app.js" />
+    <Content Include="config.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="main.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -291,6 +309,17 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710251833150_InitialModel.resx">
       <DependentUpon>201710251833150_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710261833549_OverrideConventionForModels.resx">
+      <DependentUpon>201710261833549_OverrideConventionForModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resources.en-GB..resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en-GB..Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

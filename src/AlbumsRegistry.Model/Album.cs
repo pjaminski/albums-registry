@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace AlbumsRegistry.Model
 {
@@ -10,10 +6,13 @@ namespace AlbumsRegistry.Model
     {
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(255)]
         public string Title { get; set; }
 
         public int ReleaseYear { get; set; }
 
+        [Required]
         public Artist Artist { get; set; }
 
         public Publisher Publisher { get; set; }

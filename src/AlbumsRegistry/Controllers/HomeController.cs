@@ -3,14 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AlbumsRegistry.DAL;
+using System.Data.Entity;
 
 namespace AlbumsRegistry.Controllers
 {
     public class HomeController : Controller
     {
+        private AlbumsRegistryDbContext _dbContext;
+
+        public HomeController()
+        {
+            _dbContext = new AlbumsRegistryDbContext();
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var albums = _dbContext.Albums
+                .Include(a => a.Artist)
+                .Include(a => a.Publisher);
+
+            return View(albums);
         }
 
         public ActionResult About()
