@@ -1,7 +1,7 @@
-﻿using AlbumsRegistry.Repository.Models;
+﻿using AlbumsRegistry.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace AlbumsRegistry.Repository
+namespace AlbumsRegistry.WebApi.DataAccess
 {
     public class AlbumsRegistryDbContext : DbContext
     {
@@ -10,5 +10,10 @@ namespace AlbumsRegistry.Repository
         public DbSet<Publisher> Publishers { get; set; }
 
         public DbSet<Album> Albums { get; set; }
+
+        public AlbumsRegistryDbContext(DbContextOptions<AlbumsRegistryDbContext> options) : base(options)
+        {
+            
+        }
     }
 }

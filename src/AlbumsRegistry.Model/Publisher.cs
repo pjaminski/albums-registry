@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AlbumsRegistry.Repository.Models
+namespace AlbumsRegistry.Model
 {
     public class Publisher
     {

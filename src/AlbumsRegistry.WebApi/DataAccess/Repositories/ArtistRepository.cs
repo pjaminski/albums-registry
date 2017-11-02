@@ -1,26 +1,26 @@
 ﻿using System.Collections.Generic;
-using AlbumsRegistry.Repository.Models;
+using AlbumsRegistry.Model;
 
-namespace AlbumsRegistry.Repository.Repositories
+namespace AlbumsRegistry.WebApi.DataAccess.Repositories
 {
-    public class AlbumRepository : IAlbumRepository
+    public class ArtistRepository : IArtistRepository
     {
-        public bool CreateAlbum(Album album)
+        public bool CreateArtist(Artist artist)
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Album> GetAlbums()
+        public IEnumerable<Artist> GetArtists()
         {
             throw new System.NotImplementedException();
         }
 
-        public Album GetAlbumById(int id)
+        public Artist GetArtistById(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Album UpdateAlbum(Album album)
+        public Artist UpdateArtist(Artist artist)
         {
             throw new System.NotImplementedException();
         }

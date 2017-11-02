@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using AlbumsRegistry.Repository.Models;
+using AlbumsRegistry.Model;
 
-namespace AlbumsRegistry.Repository.Repositories.FakeRepositories
+namespace AlbumsRegistry.WebApi.DataAccess.Repositories.FakeRepositories
 {
     public class FakePublisherRepository : IPublisherRepository
     {

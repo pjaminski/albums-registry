@@ -1,51 +1,46 @@
-using System.Collections.Generic;
-using AlbumsRegistry.Repository.Models;
-using AlbumsRegistry.Repository.Repositories;
+﻿using System.Collections.Generic;
+using AlbumsRegistry.Model;
+using AlbumsRegistry.WebApi.DataAccess.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AlbumsRegistry.WebApi.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/Album")]
+    [Route("api/[controller]")]
     public class AlbumController : Controller
     {
-        private readonly IAlbumRepository _albumRepository; //todo: move to a service
+        private readonly IAlbumRepository _albumRepository;
 
         public AlbumController(IAlbumRepository albumRepository)
         {
             _albumRepository = albumRepository;
         }
 
-        // GET: api/Album
+        // GET api/Album
         [HttpGet]
         public IEnumerable<Album> Get()
         {
             return _albumRepository.GetAlbums();
         }
 
-        // GET: api/Album/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        // GET api/Album/5
+        [HttpGet("{id}")]
+        public Album Get(int id)
         {
-            return "value";
+            return _albumRepository.GetAlbumById(id);
         }
-        
-        // POST: api/Album
+
+        // POST api/Album
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Album album)
         {
+            _albumRepository.CreateAlbum(album);
         }
-        
-        // PUT: api/Album/5
+
+        // PUT api/Album/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Album album)
         {
-        }
-        
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            _albumRepository.UpdateAlbum(album);
         }
     }
 }
