@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AlbumsRegistry.WebApi.DataAccess;
+using AlbumsRegistry.WebApi.DataAccess.Repositories;
+using AlbumsRegistry.WebApi.DataAccess.Repositories.FakeRepositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +27,7 @@ namespace AlbumsRegistry.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IAlbumRepository, FakeAlbumRepository>();
             services.AddDbContext<AlbumsRegistryDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("AlbumsRegistryDb")));
             services.AddMvc();

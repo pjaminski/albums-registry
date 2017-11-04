@@ -1,5 +1,5 @@
 {
-  "name": "albumsregistryweb",
+  "name": "albumsregistryui",
   "description": "An Aurelia client application.",
   "version": "0.1.0",
   "repository": {
@@ -8,11 +8,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "aurelia-bootstrapper": "^2.1.1",
     "aurelia-animator-css": "^1.0.2",
+    "aurelia-bootstrapper": "^2.1.1",
+    "aurelia-fetch-client": "^1.1.3",
     "bluebird": "^3.4.1",
-    "requirejs": "^2.3.2",
-    "text": "github:requirejs/text#latest"
+    "systemjs": "0.20.13",
+    "systemjs-plugin-text": "0.0.9"
   },
   "peerDependencies": {},
   "devDependencies": {
