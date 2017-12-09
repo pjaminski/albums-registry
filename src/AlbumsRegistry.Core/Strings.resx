@@ -126,11 +126,26 @@
   <data name="Albums_Index_Title" xml:space="preserve">
     <value>Lista albumów</value>
   </data>
+  <data name="Artists_Index_Add" xml:space="preserve">
+    <value>Dodaj nowego wykonawcę</value>
+  </data>
+  <data name="Artists_Index_Count" xml:space="preserve">
+    <value>Liczba wykonawców</value>
+  </data>
+  <data name="Artists_Index_Title" xml:space="preserve">
+    <value>Wykonawcy</value>
+  </data>
   <data name="General_Actions_Edit" xml:space="preserve">
     <value>Zmień</value>
   </data>
   <data name="General_Headers_Artist" xml:space="preserve">
     <value>Wykonawca</value>
+  </data>
+  <data name="General_Headers_City" xml:space="preserve">
+    <value>Miasto</value>
+  </data>
+  <data name="General_Headers_Name" xml:space="preserve">
+    <value>Nazwa</value>
   </data>
   <data name="General_Headers_Publisher" xml:space="preserve">
     <value>Wytwórnia</value>
@@ -151,6 +166,15 @@
     <value>Wykonawcy</value>
   </data>
   <data name="Layout_Publishers" xml:space="preserve">
+    <value>Wytwórnie</value>
+  </data>
+  <data name="Publishers_Index_Add" xml:space="preserve">
+    <value>Dodaj nową wytwórnię</value>
+  </data>
+  <data name="Publishers_Index_Count" xml:space="preserve">
+    <value>Liczba wytwórni</value>
+  </data>
+  <data name="Publishers_Index_Title" xml:space="preserve">
     <value>Wytwórnie</value>
   </data>
 </root>

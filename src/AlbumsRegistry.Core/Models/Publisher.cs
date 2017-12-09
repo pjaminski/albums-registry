@@ -2,7 +2,7 @@
 
 namespace AlbumsRegistry.Core.Models
 {
-    public class Publisher
+    public class Publisher : INameCityModel
     {
         public int Id { get; set; }
 

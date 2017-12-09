@@ -13,7 +13,7 @@ namespace AlbumsRegistry.Core.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712082125327_InitialModel"; }
+            get { return "201712091447162_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

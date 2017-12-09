@@ -163,18 +163,19 @@
     <Compile Include="Controllers\PublishersController.cs" />
     <Compile Include="DataAccess\AlbumsRegistryDbContext.cs" />
     <Compile Include="DataAccess\Repositories\IPublishersRepository.cs" />
-    <Compile Include="Messages.Designer.cs">
+    <Compile Include="Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Messages.resx</DependentUpon>
+      <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712082125327_InitialModel.cs" />
-    <Compile Include="Migrations\201712082125327_InitialModel.Designer.cs">
-      <DependentUpon>201712082125327_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201712091447162_InitialModel.cs" />
+    <Compile Include="Migrations\201712091447162_InitialModel.Designer.cs">
+      <DependentUpon>201712091447162_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\INameCityModel.cs" />
     <Compile Include="Models\Publisher.cs" />
     <Compile Include="DataAccess\Repositories\AlbumsRepository.cs" />
     <Compile Include="DataAccess\Repositories\ArtistsRepository.cs" />
@@ -226,12 +227,12 @@
     <Content Include="Views\Albums\Edit.cshtml" />
     <Content Include="Views\Albums\Index.cshtml" />
     <Content Include="Views\Artists\Create.cshtml" />
-    <Content Include="Views\Artists\Delete.cshtml" />
     <Content Include="Views\Artists\Edit.cshtml" />
     <Content Include="Views\Artists\Index.cshtml" />
     <Content Include="Views\Publishers\Create.cshtml" />
     <Content Include="Views\Publishers\Edit.cshtml" />
     <Content Include="Views\Publishers\Index.cshtml" />
+    <Content Include="Views\Shared\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -250,12 +251,12 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Messages.resx">
+    <EmbeddedResource Include="Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712082125327_InitialModel.resx">
-      <DependentUpon>201712082125327_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712091447162_InitialModel.resx">
+      <DependentUpon>201712091447162_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

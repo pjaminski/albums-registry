@@ -22,14 +22,14 @@ namespace AlbumsRegistry.Core {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Messages {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Messages() {
+        internal Strings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AlbumsRegistry.Core {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AlbumsRegistry.Core.Messages", typeof(Messages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AlbumsRegistry.Core.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -88,6 +88,33 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dodaj nowego wykonawcę.
+        /// </summary>
+        public static string Artists_Index_Add {
+            get {
+                return ResourceManager.GetString("Artists_Index_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liczba wykonawców.
+        /// </summary>
+        public static string Artists_Index_Count {
+            get {
+                return ResourceManager.GetString("Artists_Index_Count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wykonawcy.
+        /// </summary>
+        public static string Artists_Index_Title {
+            get {
+                return ResourceManager.GetString("Artists_Index_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zmień.
         /// </summary>
         public static string General_Actions_Edit {
@@ -102,6 +129,24 @@ namespace AlbumsRegistry.Core {
         public static string General_Headers_Artist {
             get {
                 return ResourceManager.GetString("General_Headers_Artist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miasto.
+        /// </summary>
+        public static string General_Headers_City {
+            get {
+                return ResourceManager.GetString("General_Headers_City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nazwa.
+        /// </summary>
+        public static string General_Headers_Name {
+            get {
+                return ResourceManager.GetString("General_Headers_Name", resourceCulture);
             }
         }
         
@@ -165,6 +210,33 @@ namespace AlbumsRegistry.Core {
         public static string Layout_Publishers {
             get {
                 return ResourceManager.GetString("Layout_Publishers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dodaj nową wytwórnię.
+        /// </summary>
+        public static string Publishers_Index_Add {
+            get {
+                return ResourceManager.GetString("Publishers_Index_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liczba wytwórni.
+        /// </summary>
+        public static string Publishers_Index_Count {
+            get {
+                return ResourceManager.GetString("Publishers_Index_Count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wytwórnie.
+        /// </summary>
+        public static string Publishers_Index_Title {
+            get {
+                return ResourceManager.GetString("Publishers_Index_Title", resourceCulture);
             }
         }
     }
