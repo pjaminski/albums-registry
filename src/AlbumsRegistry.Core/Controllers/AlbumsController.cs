@@ -21,21 +21,6 @@ namespace AlbumsRegistry.Core.Controllers
             return View(_albumRepository.GetAlbums());
         }
 
-        // GET: Albums/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Album album = _albumRepository.GetAlbumById(id.Value);
-            if (album == null)
-            {
-                return HttpNotFound();
-            }
-            return View(album);
-        }
-
         // GET: Albums/Create
         public ActionResult Create()
         {

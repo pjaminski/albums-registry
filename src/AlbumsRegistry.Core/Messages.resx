@@ -117,6 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Albums_Index_Add" xml:space="preserve">
+    <value>Dodaj nowy album</value>
+  </data>
+  <data name="Albums_Index_Count" xml:space="preserve">
+    <value>Liczba albumów</value>
+  </data>
+  <data name="Albums_Index_Title" xml:space="preserve">
+    <value>Lista albumów</value>
+  </data>
+  <data name="General_Actions_Edit" xml:space="preserve">
+    <value>Zmień</value>
+  </data>
+  <data name="General_Headers_Artist" xml:space="preserve">
+    <value>Wykonawca</value>
+  </data>
+  <data name="General_Headers_Publisher" xml:space="preserve">
+    <value>Wytwórnia</value>
+  </data>
+  <data name="General_Headers_Title" xml:space="preserve">
+    <value>Tytuł</value>
+  </data>
+  <data name="General_Headers_TrackCount" xml:space="preserve">
+    <value>Liczba nagrań</value>
+  </data>
+  <data name="General_Headers_Year" xml:space="preserve">
+    <value>Rok wydania</value>
+  </data>
   <data name="Layout_AlbumsRegistry" xml:space="preserve">
     <value>Lista albumów</value>
   </data>
