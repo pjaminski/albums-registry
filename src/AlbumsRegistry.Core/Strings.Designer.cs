@@ -88,6 +88,15 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nowy wykonawca.
+        /// </summary>
+        public static string Artists_Create_Title {
+            get {
+                return ResourceManager.GetString("Artists_Create_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dodaj nowego wykonawcę.
         /// </summary>
         public static string Artists_Index_Add {
@@ -111,6 +120,15 @@ namespace AlbumsRegistry.Core {
         public static string Artists_Index_Title {
             get {
                 return ResourceManager.GetString("Artists_Index_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Powrót do listy.
+        /// </summary>
+        public static string General_Actions_BackToList {
+            get {
+                return ResourceManager.GetString("General_Actions_BackToList", resourceCulture);
             }
         }
         
@@ -187,6 +205,24 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wartość pola może mieć max. 255 znaków.
+        /// </summary>
+        public static string General_Validation_ValueIsLimited {
+            get {
+                return ResourceManager.GetString("General_Validation_ValueIsLimited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wartość pola jest wymagana.
+        /// </summary>
+        public static string General_Validation_ValueIsRequired {
+            get {
+                return ResourceManager.GetString("General_Validation_ValueIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lista albumów.
         /// </summary>
         public static string Layout_AlbumsRegistry {
@@ -210,6 +246,15 @@ namespace AlbumsRegistry.Core {
         public static string Layout_Publishers {
             get {
                 return ResourceManager.GetString("Layout_Publishers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nowa wytwórnia.
+        /// </summary>
+        public static string Publishers_Create_Title {
+            get {
+                return ResourceManager.GetString("Publishers_Create_Title", resourceCulture);
             }
         }
         
