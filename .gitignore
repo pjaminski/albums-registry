@@ -3,3 +3,9 @@
 ################################################################################
 
 /src/.vs/AlbumsRegistry/v15/Server/sqlite3
+/src/AlbumsRegistry.Core/obj
+/src/AlbumsRegistry.Core/bin
+/src/packages
+/src/.vs/AlbumsRegistry
+/src/.vs
+/src/AlbumsRegistry.Core/AlbumsRegistry.Core.csproj.user
