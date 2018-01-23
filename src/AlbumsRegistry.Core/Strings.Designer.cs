@@ -61,6 +61,24 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nowy album.
+        /// </summary>
+        public static string Albums_Create_Title {
+            get {
+                return ResourceManager.GetString("Albums_Create_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zmiana danych albumu.
+        /// </summary>
+        public static string Albums_Edit_Title {
+            get {
+                return ResourceManager.GetString("Albums_Edit_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dodaj nowy album.
         /// </summary>
         public static string Albums_Index_Add {
@@ -160,6 +178,15 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to -- wybierz --.
+        /// </summary>
+        public static string General_Dropdown_Select {
+            get {
+                return ResourceManager.GetString("General_Dropdown_Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wykonawca.
         /// </summary>
         public static string General_Headers_Artist {
@@ -196,6 +223,15 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rok wydania.
+        /// </summary>
+        public static string General_Headers_ReleaseYear {
+            get {
+                return ResourceManager.GetString("General_Headers_ReleaseYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tytuł.
         /// </summary>
         public static string General_Headers_Title {
@@ -207,18 +243,9 @@ namespace AlbumsRegistry.Core {
         /// <summary>
         ///   Looks up a localized string similar to Liczba nagrań.
         /// </summary>
-        public static string General_Headers_TrackCount {
+        public static string General_Headers_TracksCount {
             get {
-                return ResourceManager.GetString("General_Headers_TrackCount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Rok wydania.
-        /// </summary>
-        public static string General_Headers_Year {
-            get {
-                return ResourceManager.GetString("General_Headers_Year", resourceCulture);
+                return ResourceManager.GetString("General_Headers_TracksCount", resourceCulture);
             }
         }
         

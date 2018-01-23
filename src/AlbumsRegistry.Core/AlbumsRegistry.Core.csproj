@@ -174,6 +174,10 @@
     <Compile Include="Controllers\PublishersController.cs" />
     <Compile Include="DataAccess\AlbumsRegistryDbContext.cs" />
     <Compile Include="DataAccess\Repositories\IPublishersRepository.cs" />
+    <Compile Include="Migrations\201801231318577_NavigationProperties.cs" />
+    <Compile Include="Migrations\201801231318577_NavigationProperties.Designer.cs">
+      <DependentUpon>201801231318577_NavigationProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -270,6 +274,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801231318577_NavigationProperties.resx">
+      <DependentUpon>201801231318577_NavigationProperties.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>

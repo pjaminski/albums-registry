@@ -8,22 +8,28 @@ namespace AlbumsRegistry.Core.Controllers
 {
     public class AlbumsController : Controller
     {
-        private readonly IAlbumsRepository _albumRepository;
+        private readonly IAlbumsRepository _albumsRepository;
+        private readonly IArtistsRepository _artistsRepository;
+        private readonly IPublishersRepository _publishersRepository;
 
-        public AlbumsController()
+        public AlbumsController(IAlbumsRepository albumsRepository, IArtistsRepository artistsRepository, IPublishersRepository publishersRepository)
         {
-            _albumRepository = new FakeAlbumsRepository();
+            _albumsRepository = albumsRepository;
+            _artistsRepository = artistsRepository;
+            _publishersRepository = publishersRepository;
         }
 
         // GET: Albums
         public ActionResult Index()
         {
-            return View(_albumRepository.GetAlbums());
+            return View(_albumsRepository.GetAlbums());
         }
 
         // GET: Albums/Create
         public ActionResult Create()
         {
+            ViewBag.ArtistId = new SelectList(_artistsRepository.GetArtists(), "Id", "Name");
+            ViewBag.PublisherId = new SelectList(_publishersRepository.GetPublishers(), "Id", "Name");
             return View();
         }
 
@@ -32,14 +38,16 @@ namespace AlbumsRegistry.Core.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,ReleaseYear,TracksCount")] Album album)
+        public ActionResult Create([Bind(Include = "Id,Title,ReleaseYear,ArtistId,PublisherId,TracksCount")] Album album)
         {
             if (ModelState.IsValid)
             {
-                _albumRepository.CreateAlbum(album);
+                _albumsRepository.CreateAlbum(album);
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ArtistId = new SelectList(_artistsRepository.GetArtists(), "Id", "Name", album.ArtistId);
+            ViewBag.PublisherId = new SelectList(_publishersRepository.GetPublishers(), "Id", "Name", album.PublisherId);
             return View(album);
         }
 
@@ -50,11 +58,16 @@ namespace AlbumsRegistry.Core.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Album album = _albumRepository.GetAlbumById(id.Value);
+
+            var album = _albumsRepository.GetAlbumById(id.Value);
+
             if (album == null)
             {
                 return HttpNotFound();
             }
+
+            ViewBag.ArtistId = new SelectList(_artistsRepository.GetArtists(), "Id", "Name", album.ArtistId);
+            ViewBag.PublisherId = new SelectList(_publishersRepository.GetPublishers(), "Id", "Name", album.PublisherId);
             return View(album);
         }
 
@@ -63,16 +76,17 @@ namespace AlbumsRegistry.Core.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,ReleaseYear,TracksCount")] Album album)
+        public ActionResult Edit([Bind(Include = "Id,Title,ReleaseYear,ArtistId,PublisherId,TracksCount")] Album album)
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(album).State = EntityState.Modified;
-                //db.SaveChanges();
-                _albumRepository.UpdateAlbum(album);
+                _albumsRepository.UpdateAlbum(album);
                 return RedirectToAction("Index");
             }
+
+            ViewBag.ArtistId = new SelectList(_artistsRepository.GetArtists(), "Id", "Name", album.ArtistId);
+            ViewBag.PublisherId = new SelectList(_publishersRepository.GetPublishers(), "Id", "Name", album.PublisherId);
             return View(album);
-        }       
+        }        
     }
 }

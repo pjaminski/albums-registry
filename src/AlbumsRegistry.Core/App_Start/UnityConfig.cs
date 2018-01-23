@@ -43,6 +43,7 @@ namespace AlbumsRegistry.Core
 
             container.RegisterType<IArtistsRepository, FakeArtistsRepository>();
             container.RegisterType<IPublishersRepository, FakePublishersRepository>();
+            container.RegisterType<IAlbumsRepository, FakeAlbumsRepository>();
         }
     }
 }
