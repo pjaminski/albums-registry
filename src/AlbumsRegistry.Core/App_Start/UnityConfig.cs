@@ -41,8 +41,8 @@ namespace AlbumsRegistry.Core
             // Make sure to add a Unity.Configuration to the using statements.
             // container.LoadConfiguration();
 
-            // TODO: Register your type's mappings here.
             container.RegisterType<IArtistsRepository, FakeArtistsRepository>();
+            container.RegisterType<IPublishersRepository, FakePublishersRepository>();
         }
     }
 }

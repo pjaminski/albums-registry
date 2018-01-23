@@ -1,7 +1,6 @@
 ﻿using System.Net;
 using System.Web.Mvc;
 using AlbumsRegistry.Core.DataAccess.Repositories;
-using AlbumsRegistry.Core.DataAccess.Repositories.FakeRepositories;
 using AlbumsRegistry.Core.Models;
 
 namespace AlbumsRegistry.Core.Controllers
@@ -10,30 +9,15 @@ namespace AlbumsRegistry.Core.Controllers
     {
         private readonly IPublishersRepository _publishersRepository;
 
-        public PublishersController()
+        public PublishersController(IPublishersRepository publishersRepository)
         {
-            _publishersRepository = new FakePublishersRepository();
+            _publishersRepository = publishersRepository;
         }
 
         // GET: Publishers
         public ActionResult Index()
         {
             return View(_publishersRepository.GetPublishers());
-        }
-
-        // GET: Publishers/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Publisher publisher = _publishersRepository.GetPublisherById(id.Value);
-            if (publisher == null)
-            {
-                return HttpNotFound();
-            }
-            return View(publisher);
         }
 
         // GET: Publishers/Create
@@ -65,11 +49,14 @@ namespace AlbumsRegistry.Core.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Publisher publisher = _publishersRepository.GetPublisherById(id.Value);
+
+            var publisher = _publishersRepository.GetPublisherById(id.Value);
+
             if (publisher == null)
             {
                 return HttpNotFound();
             }
+
             return View(publisher);
         }
 
@@ -82,8 +69,6 @@ namespace AlbumsRegistry.Core.Controllers
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(publisher).State = EntityState.Modified;
-                //db.SaveChanges();
                 _publishersRepository.UpdatePublisher(publisher);
                 return RedirectToAction("Index");
             }
