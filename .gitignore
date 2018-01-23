@@ -9,3 +9,4 @@
 /src/.vs/AlbumsRegistry
 /src/.vs
 /src/AlbumsRegistry.Core/AlbumsRegistry.Core.csproj.user
+/src/AlbumsRegistry.Core/artists.json

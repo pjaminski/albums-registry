@@ -129,6 +129,9 @@
   <data name="Artists_Create_Title" xml:space="preserve">
     <value>Nowy wykonawca</value>
   </data>
+  <data name="Artists_Edit_Title" xml:space="preserve">
+    <value>Zmiana danych wykonawcy</value>
+  </data>
   <data name="Artists_Index_Add" xml:space="preserve">
     <value>Dodaj nowego wykonawcę</value>
   </data>
@@ -143,6 +146,9 @@
   </data>
   <data name="General_Actions_Edit" xml:space="preserve">
     <value>Zmień</value>
+  </data>
+  <data name="General_Actions_Save" xml:space="preserve">
+    <value>Zapisz</value>
   </data>
   <data name="General_Headers_Artist" xml:space="preserve">
     <value>Wykonawca</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="Publishers_Create_Title" xml:space="preserve">
     <value>Nowa wytwórnia</value>
+  </data>
+  <data name="Publishers_Edit_Title" xml:space="preserve">
+    <value>Zmiana danych wytwórni</value>
   </data>
   <data name="Publishers_Index_Add" xml:space="preserve">
     <value>Dodaj nową wytwórnię</value>

@@ -1,7 +1,6 @@
 ﻿using System.Net;
 using System.Web.Mvc;
 using AlbumsRegistry.Core.DataAccess.Repositories;
-using AlbumsRegistry.Core.DataAccess.Repositories.FakeRepositories;
 using AlbumsRegistry.Core.Models;
 
 namespace AlbumsRegistry.Core.Controllers
@@ -10,9 +9,9 @@ namespace AlbumsRegistry.Core.Controllers
     {
         private readonly IArtistsRepository _artistsRepository;
 
-        public ArtistsController()
+        public ArtistsController(IArtistsRepository artistsRepository)
         {
-            _artistsRepository = new FakeArtistsRepository();
+            _artistsRepository = artistsRepository;
         }
 
         // GET: Artists
@@ -48,11 +47,14 @@ namespace AlbumsRegistry.Core.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Artist artist = _artistsRepository.GetArtistById(id.Value);
+
+            var artist = _artistsRepository.GetArtistById(id.Value);
+
             if (artist == null)
             {
                 return HttpNotFound();
             }
+
             return View(artist);
         }
 
@@ -62,12 +64,11 @@ namespace AlbumsRegistry.Core.Controllers
         public ActionResult Edit([Bind(Include = "Id,Name,City")] Artist artist)
         {
             if (ModelState.IsValid)
-            {
-                //db.Entry(artist).State = EntityState.Modified;
-                //db.SaveChanges();
+            {;
                 _artistsRepository.UpdateArtist(artist);
                 return RedirectToAction("Index");
             }
+
             return View(artist);
         }
     }

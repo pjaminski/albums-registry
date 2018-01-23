@@ -97,6 +97,15 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zmiana danych wykonawcy.
+        /// </summary>
+        public static string Artists_Edit_Title {
+            get {
+                return ResourceManager.GetString("Artists_Edit_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dodaj nowego wykonawcę.
         /// </summary>
         public static string Artists_Index_Add {
@@ -138,6 +147,15 @@ namespace AlbumsRegistry.Core {
         public static string General_Actions_Edit {
             get {
                 return ResourceManager.GetString("General_Actions_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zapisz.
+        /// </summary>
+        public static string General_Actions_Save {
+            get {
+                return ResourceManager.GetString("General_Actions_Save", resourceCulture);
             }
         }
         
@@ -255,6 +273,15 @@ namespace AlbumsRegistry.Core {
         public static string Publishers_Create_Title {
             get {
                 return ResourceManager.GetString("Publishers_Create_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zmiana danych wytwórni.
+        /// </summary>
+        public static string Publishers_Edit_Title {
+            get {
+                return ResourceManager.GetString("Publishers_Edit_Title", resourceCulture);
             }
         }
         
