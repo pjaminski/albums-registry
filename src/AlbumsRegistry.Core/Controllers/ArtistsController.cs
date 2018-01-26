@@ -34,6 +34,7 @@ namespace AlbumsRegistry.Core.Controllers
             if (ModelState.IsValid)
             {
                 _artistsRepository.CreateArtist(artist);
+                TempData["Msg"] = Strings.Artists_Index_Added;
                 return RedirectToAction("Index");
             }
 

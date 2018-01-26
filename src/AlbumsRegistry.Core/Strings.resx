@@ -126,6 +126,9 @@
   <data name="Albums_Index_Add" xml:space="preserve">
     <value>Dodaj nowy album</value>
   </data>
+  <data name="Albums_Index_Added" xml:space="preserve">
+    <value>Dodano nowy album</value>
+  </data>
   <data name="Albums_Index_Count" xml:space="preserve">
     <value>Liczba albumów</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="Artists_Index_Add" xml:space="preserve">
     <value>Dodaj nowego wykonawcę</value>
+  </data>
+  <data name="Artists_Index_Added" xml:space="preserve">
+    <value>Dodano nowego wykonawcę</value>
   </data>
   <data name="Artists_Index_Count" xml:space="preserve">
     <value>Liczba wykonawców</value>
@@ -206,6 +212,9 @@
   </data>
   <data name="Publishers_Index_Add" xml:space="preserve">
     <value>Dodaj nową wytwórnię</value>
+  </data>
+  <data name="Publishers_Index_Added" xml:space="preserve">
+    <value>Dodano nową wytwórnię</value>
   </data>
   <data name="Publishers_Index_Count" xml:space="preserve">
     <value>Liczba wytwórni</value>

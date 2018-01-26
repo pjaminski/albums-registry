@@ -43,6 +43,7 @@ namespace AlbumsRegistry.Core.Controllers
             if (ModelState.IsValid)
             {
                 _albumsRepository.CreateAlbum(album);
+                TempData["Msg"] = Strings.Albums_Index_Added;
                 return RedirectToAction("Index");
             }
 

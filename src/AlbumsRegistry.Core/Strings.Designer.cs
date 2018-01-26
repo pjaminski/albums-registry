@@ -88,6 +88,15 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dodano nowy album.
+        /// </summary>
+        public static string Albums_Index_Added {
+            get {
+                return ResourceManager.GetString("Albums_Index_Added", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Liczba albumów.
         /// </summary>
         public static string Albums_Index_Count {
@@ -129,6 +138,15 @@ namespace AlbumsRegistry.Core {
         public static string Artists_Index_Add {
             get {
                 return ResourceManager.GetString("Artists_Index_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dodano nowego wykonawcę.
+        /// </summary>
+        public static string Artists_Index_Added {
+            get {
+                return ResourceManager.GetString("Artists_Index_Added", resourceCulture);
             }
         }
         
@@ -327,6 +345,15 @@ namespace AlbumsRegistry.Core {
         public static string Publishers_Index_Add {
             get {
                 return ResourceManager.GetString("Publishers_Index_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dodano nową wytwórnię.
+        /// </summary>
+        public static string Publishers_Index_Added {
+            get {
+                return ResourceManager.GetString("Publishers_Index_Added", resourceCulture);
             }
         }
         

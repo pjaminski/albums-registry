@@ -36,6 +36,7 @@ namespace AlbumsRegistry.Core.Controllers
             if (ModelState.IsValid)
             {
                 _publishersRepository.CreatePublisher(publisher);
+                TempData["Msg"] = Strings.Publishers_Index_Added;
                 return RedirectToAction("Index");
             }
 
