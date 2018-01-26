@@ -80,7 +80,10 @@ namespace AlbumsRegistry.Core.Controllers
         {
             if (ModelState.IsValid)
             {
+                album.Artist = _artistsRepository.GetArtistById(album.ArtistId);
+                album.Publisher = _publishersRepository.GetPublisherById(album.PublisherId);
                 _albumsRepository.UpdateAlbum(album);
+                TempData["Msg"] = Strings.General_ChangesSaved;
                 return RedirectToAction("Index");
             }
 

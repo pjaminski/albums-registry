@@ -178,6 +178,15 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zmiany zostały zapisane.
+        /// </summary>
+        public static string General_ChangesSaved {
+            get {
+                return ResourceManager.GetString("General_ChangesSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to -- wybierz --.
         /// </summary>
         public static string General_Dropdown_Select {

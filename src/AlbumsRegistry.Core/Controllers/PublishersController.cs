@@ -70,6 +70,7 @@ namespace AlbumsRegistry.Core.Controllers
             if (ModelState.IsValid)
             {
                 _publishersRepository.UpdatePublisher(publisher);
+                TempData["Msg"] = Strings.General_ChangesSaved;
                 return RedirectToAction("Index");
             }
             return View(publisher);

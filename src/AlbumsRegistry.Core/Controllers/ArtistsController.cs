@@ -66,6 +66,7 @@ namespace AlbumsRegistry.Core.Controllers
             if (ModelState.IsValid)
             {;
                 _artistsRepository.UpdateArtist(artist);
+                TempData["Msg"] = Strings.General_ChangesSaved;
                 return RedirectToAction("Index");
             }
 

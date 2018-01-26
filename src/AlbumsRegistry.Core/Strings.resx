@@ -156,6 +156,9 @@
   <data name="General_Actions_Save" xml:space="preserve">
     <value>Zapisz</value>
   </data>
+  <data name="General_ChangesSaved" xml:space="preserve">
+    <value>Zmiany zostały zapisane</value>
+  </data>
   <data name="General_Dropdown_Select" xml:space="preserve">
     <value>-- wybierz --</value>
   </data>
