@@ -117,100 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Albums_Create_Title" xml:space="preserve">
-    <value>Nowy album</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="Albums_Edit_Title" xml:space="preserve">
-    <value>Zmiana danych albumu</value>
-  </data>
-  <data name="Albums_Index_Add" xml:space="preserve">
-    <value>Dodaj nowy album</value>
-  </data>
-  <data name="Albums_Index_Count" xml:space="preserve">
-    <value>Liczba albumów</value>
-  </data>
-  <data name="Albums_Index_Title" xml:space="preserve">
-    <value>Lista albumów</value>
-  </data>
-  <data name="Artists_Create_Title" xml:space="preserve">
-    <value>Nowy wykonawca</value>
-  </data>
-  <data name="Artists_Edit_Title" xml:space="preserve">
-    <value>Zmiana danych wykonawcy</value>
-  </data>
-  <data name="Artists_Index_Add" xml:space="preserve">
-    <value>Dodaj nowego wykonawcę</value>
-  </data>
-  <data name="Artists_Index_Count" xml:space="preserve">
-    <value>Liczba wykonawców</value>
-  </data>
-  <data name="Artists_Index_Title" xml:space="preserve">
-    <value>Wykonawcy</value>
-  </data>
-  <data name="General_Actions_BackToList" xml:space="preserve">
-    <value>Powrót do listy</value>
-  </data>
-  <data name="General_Actions_Edit" xml:space="preserve">
-    <value>Zmień</value>
-  </data>
-  <data name="General_Actions_Save" xml:space="preserve">
-    <value>Zapisz</value>
-  </data>
-  <data name="General_ChangesSaved" xml:space="preserve">
-    <value>Zmiany zostały zapisane</value>
-  </data>
-  <data name="General_Dropdown_Select" xml:space="preserve">
-    <value>-- wybierz --</value>
-  </data>
-  <data name="General_Headers_Artist" xml:space="preserve">
-    <value>Wykonawca</value>
-  </data>
-  <data name="General_Headers_City" xml:space="preserve">
-    <value>Miasto</value>
-  </data>
-  <data name="General_Headers_Name" xml:space="preserve">
-    <value>Nazwa</value>
-  </data>
-  <data name="General_Headers_Publisher" xml:space="preserve">
-    <value>Wytwórnia</value>
-  </data>
-  <data name="General_Headers_ReleaseYear" xml:space="preserve">
-    <value>Rok wydania</value>
-  </data>
-  <data name="General_Headers_Title" xml:space="preserve">
-    <value>Tytuł</value>
-  </data>
-  <data name="General_Headers_TracksCount" xml:space="preserve">
-    <value>Liczba nagrań</value>
-  </data>
-  <data name="General_Validation_ValueIsLimited" xml:space="preserve">
-    <value>Wartość pola może mieć max. 255 znaków</value>
-  </data>
-  <data name="General_Validation_ValueIsRequired" xml:space="preserve">
-    <value>Wartość pola jest wymagana</value>
-  </data>
-  <data name="Layout_AlbumsRegistry" xml:space="preserve">
-    <value>Lista albumów</value>
-  </data>
-  <data name="Layout_Artists" xml:space="preserve">
-    <value>Wykonawcy</value>
-  </data>
-  <data name="Layout_Publishers" xml:space="preserve">
-    <value>Wytwórnie</value>
-  </data>
-  <data name="Publishers_Create_Title" xml:space="preserve">
-    <value>Nowa wytwórnia</value>
-  </data>
-  <data name="Publishers_Edit_Title" xml:space="preserve">
-    <value>Zmiana danych wytwórni</value>
-  </data>
-  <data name="Publishers_Index_Add" xml:space="preserve">
-    <value>Dodaj nową wytwórnię</value>
-  </data>
-  <data name="Publishers_Index_Count" xml:space="preserve">
-    <value>Liczba wytwórni</value>
-  </data>
-  <data name="Publishers_Index_Title" xml:space="preserve">
-    <value>Wytwórnie</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

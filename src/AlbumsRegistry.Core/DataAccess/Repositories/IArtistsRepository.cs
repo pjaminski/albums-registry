@@ -5,12 +5,12 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories
 {
     public interface IArtistsRepository
     {
-        bool CreateArtist(Artist artist);
+        void CreateArtist(Artist artist);
 
         IEnumerable<Artist> GetArtists();
 
         Artist GetArtistById(int id);
 
-        Artist UpdateArtist(Artist artist);
+        void UpdateArtist(Artist artist);
     }
 }

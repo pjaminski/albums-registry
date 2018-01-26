@@ -1,22 +1,21 @@
 ﻿@model AlbumsRegistry.Core.Models.Album
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Strings.Albums_Create_Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>@Strings.Albums_Create_Title</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Album</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Title", Strings.General_Headers_Title, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
@@ -24,7 +23,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ReleaseYear, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("ReleaseYear", Strings.General_Headers_ReleaseYear, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ReleaseYear, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ReleaseYear, "", new { @class = "text-danger" })
@@ -32,7 +31,23 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TracksCount, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("ArtistId", Strings.General_Headers_Artist, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ArtistId", null, htmlAttributes: new { @class = "form-control" }, optionLabel: Strings.General_Dropdown_Select)
+                @Html.ValidationMessageFor(model => model.ArtistId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("PublisherId", Strings.General_Headers_Publisher, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("PublisherId", null, htmlAttributes: new { @class = "form-control" }, optionLabel: Strings.General_Dropdown_Select)
+                @Html.ValidationMessageFor(model => model.PublisherId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("TracksCount", Strings.General_Headers_TracksCount, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TracksCount, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TracksCount, "", new { @class = "text-danger" })
@@ -41,14 +56,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="@Strings.General_Actions_Save" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(Strings.General_Actions_BackToList, "Index")
 </div>
 
 @section Scripts {

@@ -5,7 +5,7 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories
 {
     public class ArtistsRepository : IArtistsRepository
     {
-        public bool CreateArtist(Artist artist)
+        public void CreateArtist(Artist artist)
         {
             throw new System.NotImplementedException();
         }
@@ -20,7 +20,7 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories
             throw new System.NotImplementedException();
         }
 
-        public Artist UpdateArtist(Artist artist)
+        public void UpdateArtist(Artist artist)
         {
             throw new System.NotImplementedException();
         }

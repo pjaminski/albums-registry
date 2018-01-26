@@ -5,7 +5,7 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories
 {
     public class PublishersRepository : IPublishersRepository
     {
-        public bool CreatePublisher(Publisher publisher)
+        public void CreatePublisher(Publisher publisher)
         {
             throw new System.NotImplementedException();
         }
@@ -20,7 +20,7 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories
             throw new System.NotImplementedException();
         }
 
-        public Publisher UpdatePublisher(Publisher publisher)
+        public void UpdatePublisher(Publisher publisher)
         {
             throw new System.NotImplementedException();
         }

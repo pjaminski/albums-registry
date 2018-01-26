@@ -5,12 +5,12 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories
 {
     public interface IPublishersRepository
     {
-        bool CreatePublisher(Publisher publisher);
+        void CreatePublisher(Publisher publisher);
 
         IEnumerable<Publisher> GetPublishers();
 
         Publisher GetPublisherById(int id);
 
-        Publisher UpdatePublisher(Publisher publisher);
+        void UpdatePublisher(Publisher publisher);
     }
 }

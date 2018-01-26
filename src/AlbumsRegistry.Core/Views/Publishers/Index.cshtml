@@ -17,3 +17,16 @@
 </p>
 
 @Html.Partial("_List", new ViewDataDictionary(Model))
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/toastr")
+    <script>
+        $(function() {
+            var msg = "@(TempData["Msg"] as string)";
+            if (msg) {
+                toastr.success(msg);
+            }
+        });
+    </script>
+}
