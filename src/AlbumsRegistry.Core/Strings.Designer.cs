@@ -196,6 +196,15 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Szukaj....
+        /// </summary>
+        public static string General_Actions_Search {
+            get {
+                return ResourceManager.GetString("General_Actions_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zmiany zostały zapisane.
         /// </summary>
         public static string General_ChangesSaved {

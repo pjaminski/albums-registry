@@ -162,6 +162,9 @@
   <data name="General_Actions_Save" xml:space="preserve">
     <value>Zapisz</value>
   </data>
+  <data name="General_Actions_Search" xml:space="preserve">
+    <value>Szukaj...</value>
+  </data>
   <data name="General_ChangesSaved" xml:space="preserve">
     <value>Zmiany zostały zapisane</value>
   </data>
