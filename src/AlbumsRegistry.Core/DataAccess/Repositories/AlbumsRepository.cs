@@ -24,5 +24,10 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories
         {
             throw new System.NotImplementedException();
         }
+
+        public IEnumerable<Album> GetAlbumsBySearchTerm(string searchTerm)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

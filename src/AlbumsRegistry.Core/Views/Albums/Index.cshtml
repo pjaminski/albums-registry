@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AlbumsRegistry.Core.Models.Album>
+﻿@model AlbumsRegistry.Core.ViewModels.AlbumsIndexViewModel
 
 @{
     ViewBag.Title = Strings.Albums_Index_Title;
@@ -13,21 +13,24 @@
         <span>@Strings.Albums_Index_Add</span>
     </a>
 
-    <span class="pull-right">@Strings.Albums_Index_Count: <b>@Model.Count()</b></span>
+    <span class="pull-right">@Strings.Albums_Index_Count: <b>@Model.Albums.Count()</b></span>
 </p>
 
-<div class="row">
-    <div class="search-form">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="@Strings.General_Actions_Search" />
-            <span class="input-group-btn">
-                <button type="button" class="btn btn-default no-left-border">
-                    <i class="glyphicon glyphicon-search"></i>
-                </button>
-            </span>
+@using (Html.BeginForm("Search", "Albums"))
+{
+    <div class="row">
+        <div class="search-form">
+            <div class="input-group">
+                <input type="text" value="@Model.SearchFilter" name="searchTerm" class="form-control" placeholder="@Strings.General_Actions_Search"/>
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default no-left-border">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </span>
+            </div>
         </div>
     </div>
-</div>
+}
 
 <table class="table">
     <tr>
@@ -49,7 +52,7 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model) {
+    @foreach (var item in Model.Albums) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Artist.Name)

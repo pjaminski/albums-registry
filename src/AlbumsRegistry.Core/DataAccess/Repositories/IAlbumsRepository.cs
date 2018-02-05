@@ -12,5 +12,7 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories
         Album GetAlbumById(int id);
 
         void UpdateAlbum(Album album);
+
+        IEnumerable<Album> GetAlbumsBySearchTerm(string searchTerm);
     }
 }

@@ -52,6 +52,13 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories.FakeRepositories
             SaveJsonFile();
         }
 
+        public IEnumerable<Album> GetAlbumsBySearchTerm(string searchTerm)
+        {
+            var searchString = searchTerm.ToLower().Trim();
+            return _albumsDictionary.Values.Where(a => a.Title.ToLower().Contains(searchString) ||
+                                                       a.Artist.Name.ToLower().Contains(searchString));
+        }
+
         private void Seed()
         {
             if (File.Exists(_albumJsonFile))
