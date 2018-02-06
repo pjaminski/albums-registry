@@ -5,7 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Strings.Publishers_Edit_Title</h2>
+<div class="row">
+    <div class="col-xs-12">
+        <h2>@Strings.Publishers_Edit_Title</h2>
+    </div>
+</div>
 
 @Html.Partial("_EditForm", new ViewDataDictionary(Model))
 

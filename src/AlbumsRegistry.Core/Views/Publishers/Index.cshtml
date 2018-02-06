@@ -5,19 +5,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Strings.Publishers_Index_Title</h2>
+<div class="row">
+    <div class="col-xs-12">
+        <h2>@Strings.Publishers_Index_Title</h2>
+    </div>
+</div>
 
-<p>
-    <a class="btn btn-default" href="@Url.Action("Create", "Publishers")" role="button">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        <span>@Strings.Publishers_Index_Add</span>
-    </a>
-
-    <span class="pull-right">@Strings.Publishers_Index_Count: <b>@Model.Count()</b></span>
-</p>
+<div class="row">
+    <div class="col-xs-6">
+        <p>
+            <a class="btn btn-default" href="@Url.Action("Create", "Publishers")" role="button">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span>@Strings.Publishers_Index_Add</span>
+            </a>
+        </p>
+    </div>
+    <div class="col-xs-6">
+        <span class="pull-right">@Strings.Publishers_Index_Count: <b>@Model.Count()</b></span>
+    </div>
+</div>
 
 @Html.Partial("_List", new ViewDataDictionary(Model))
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/toastr")

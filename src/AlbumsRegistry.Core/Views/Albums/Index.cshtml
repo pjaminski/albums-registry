@@ -5,88 +5,107 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Strings.Albums_Index_Title</h2>
-
-<p>
-    <a class="btn btn-default" href="@Url.Action("Create", "Albums")" role="button">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        <span>@Strings.Albums_Index_Add</span>
-    </a>
-
-    <span class="pull-right">@Strings.Albums_Index_Count: <b>@Model.Albums.Count()</b></span>
-</p>
-
-@using (Html.BeginForm("Search", "Albums"))
-{
-    <div class="row">
-        <div class="search-form">
-            <div class="input-group">
-                <input type="text" value="@Model.SearchFilter" name="searchTerm" class="form-control" placeholder="@Strings.General_Actions_Search"/>
-                <span class="input-group-btn">
-                    <button type="submit" class="btn btn-default no-left-border">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </span>
-            </div>
-        </div>
+<div class="row">
+    <div class="col-xs-12">
+        <h2>@Strings.Albums_Index_Title</h2>
     </div>
-}
+</div>
 
-<table class="table">
-    <tr>
-        <th>
-            @Strings.General_Headers_Artist
-        </th>
-        <th>
-            @Strings.General_Headers_Title
-        </th>
-        <th>
-            @Strings.General_Headers_ReleaseYear
-        </th>
-        <th>
-            @Strings.General_Headers_Publisher
-        </th>
-        <th>
-            @Strings.General_Headers_TracksCount
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    <div class="col-xs-6">
+        <p>
+            <a class="btn btn-default" href="@Url.Action("Create", "Albums")" role="button">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span>@Strings.Albums_Index_Add</span>
+            </a>
+        </p>
+    </div>
+    <div class="col-xs-6">
+        <span class="pull-right">@Strings.Albums_Index_Count: <b>@Model.Albums.Count()</b></span>
+    </div>
 
-    @foreach (var item in Model.Albums) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Artist.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Publisher.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TracksCount)
-            </td>
-            <td>
-                <a href="@Url.Action("Edit", new {id = item.Id})">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="true" title="@Strings.General_Actions_Edit"></span>
-                </a>
-            </td>
-        </tr>
-    }
+</div>
 
-</table>
+<div class="row">
+    <div class="col-xs-12">
+        @using (Html.BeginForm("Search", "Albums"))
+        {
+
+            <div class="search-form">
+                <div class="input-group">
+                    <input type="text" value="@Model.SearchFilter" name="searchTerm" class="form-control" placeholder="@Strings.General_Actions_Search" />
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default no-left-border">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-condensed">
+            <tr>
+                <th>
+                    @Strings.General_Headers_Artist
+                </th>
+                <th>
+                    @Strings.General_Headers_Title
+                </th>
+                <th>
+                    @Strings.General_Headers_ReleaseYear
+                </th>
+                <th>
+                    @Strings.General_Headers_Publisher
+                </th>
+                <th>
+                    @Strings.General_Headers_TracksCount
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Albums)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Artist.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReleaseYear)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Publisher.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TracksCount)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new {id = item.Id})">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true" title="@Strings.General_Actions_Edit"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/toastr")
     <script>
-        $(function() {
-            var msg = "@(TempData["Msg"] as string)";
-            if (msg) {
-                toastr.success(msg);
-            }
-        });
+         $(function() {
+             var msg = "@(TempData["Msg"] as string)";
+             if (msg) {
+                 toastr.success(msg);
+             }
+         });
     </script>
 }

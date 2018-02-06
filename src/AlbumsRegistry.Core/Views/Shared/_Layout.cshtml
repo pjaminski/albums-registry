@@ -28,10 +28,14 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Piotr Jamiński</p>
-        </footer>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Piotr Jamiński</p>
+                </footer>
+            </div>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
