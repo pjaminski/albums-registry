@@ -277,15 +277,6 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Liczba nagrań.
-        /// </summary>
-        public static string General_Headers_TracksCount {
-            get {
-                return ResourceManager.GetString("General_Headers_TracksCount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Wartość pola może mieć max. 255 znaków.
         /// </summary>
         public static string General_Validation_ValueIsLimited {

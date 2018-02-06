@@ -29,7 +29,5 @@ namespace AlbumsRegistry.Core.Models
             ErrorMessageResourceType = typeof(Strings),
             ErrorMessageResourceName = "General_Validation_ValueIsRequired")]
         public int PublisherId { get; set; }
-
-        public int? TracksCount { get; set; }
     }
 }

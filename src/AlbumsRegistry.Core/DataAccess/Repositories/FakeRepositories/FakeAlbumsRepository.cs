@@ -78,8 +78,7 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories.FakeRepositories
                 Publisher = new Publisher {City = "Warszawa", Id = 1, Name = "Wielkie Joł"},
                 PublisherId = 1,
                 ReleaseYear = 2004,
-                Title = "Hajs Hajs Hajs",
-                TracksCount = 22
+                Title = "Hajs Hajs Hajs"
             };
 
             _albumsDictionary.Add(album1.Id, album1);
@@ -92,8 +91,7 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories.FakeRepositories
                 Publisher = new Publisher { City = "Warszawa", Id = 3, Name = "Wielkie Joł" },
                 PublisherId = 3,
                 ReleaseYear = 2017,
-                Title = "Złota owca",
-                TracksCount = 14
+                Title = "Złota owca"
             };
 
             _albumsDictionary.Add(album2.Id, album2);
@@ -105,8 +103,7 @@ namespace AlbumsRegistry.Core.DataAccess.Repositories.FakeRepositories
                 Id = ++_nextId,
                 Publisher = new Publisher { City = "Opole", Id = 2, Name = "Step Records" },
                 PublisherId = 2,
-                Title = "Album3",
-                TracksCount = 22
+                Title = "Album3"
             };
 
             _albumsDictionary.Add(album3.Id, album3);

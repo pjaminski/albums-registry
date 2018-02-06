@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201801231318577_NavigationProperties.Designer.cs">
       <DependentUpon>201801231318577_NavigationProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802060825222_RemoveTrackCount.cs" />
+    <Compile Include="Migrations\201802060825222_RemoveTrackCount.Designer.cs">
+      <DependentUpon>201802060825222_RemoveTrackCount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -282,6 +286,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801231318577_NavigationProperties.resx">
       <DependentUpon>201801231318577_NavigationProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802060825222_RemoveTrackCount.resx">
+      <DependentUpon>201802060825222_RemoveTrackCount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
