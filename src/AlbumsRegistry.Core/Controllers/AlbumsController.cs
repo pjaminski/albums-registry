@@ -45,6 +45,8 @@ namespace AlbumsRegistry.Core.Controllers
         {
             if (ModelState.IsValid)
             {
+                album.Artist = _artistsRepository.GetArtistById(album.ArtistId);
+                album.Publisher = _publishersRepository.GetPublisherById(album.PublisherId);
                 _albumsRepository.CreateAlbum(album);
                 TempData["Msg"] = Strings.Albums_Index_Added;
                 return RedirectToAction("Index");

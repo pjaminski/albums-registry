@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #F4DECB;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -31,4 +32,70 @@ textarea {
 
 .no-left-border {
     border-left-width: 0;
+}
+
+.navbar-inverse {
+    background-color: #94618E;
+    border: 0;
+}
+
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+        border-color: white;
+    }
+
+    .navbar-inverse .navbar-toggle, .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+        border-color: white;
+        color: white;
+    }
+
+        .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+            color: #F4DECB;
+        }
+
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #F4DECB;
+        }
+
+        .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+            background-color: #F4DECB;
+        }
+
+hr {
+    border-color: #94618E;
+}
+
+a {
+    color: #94618e;
+}
+
+    a:hover, a:active {
+        color: black;
+    }
+
+.btn-default {
+    color: white;
+    background-color: #94618e;
+    border-color: #94618e;
+}
+
+    .btn-default:hover, .btn-default:active {
+        color: #94618e;
+        background-color: #f4decb;
+        border-color: #94618e;
+    }
+
+.form-control {
+    border-color: #94618e;
+}
+
+    .form-control:focus {
+        border-color: #94618e;
+    }
+
+.table thead > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    border-color: #94618e;
+}
+
+.table tbody > tr > th {
+    border-top: 0;
 }
