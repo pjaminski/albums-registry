@@ -1,0 +1,59 @@
+﻿@model AlbumsRegistry.Core.ViewModels.ActivationAdminModeViewModel
+
+@{
+    ViewBag.Title = Strings.AdminMode_Activate_Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>@Strings.AdminMode_Activate_Title</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">              
+                <div class="form-group">
+                    @Html.Label("Password", Strings.AdminMode_Activate_Password, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="@Strings.AdminMode_Activate_Submit" class="btn btn-default"/>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <a href="javascript:history.go(-1)">@Strings.AdminMode_Activate_Return</a>
+    </div>    
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/toastr")
+    <script>
+        $(function () {
+            @{
+                var errorMessage = Model != null ? Model.ErrorMessage : "";
+            }
+            var msg = "@errorMessage";
+            if (msg) {
+                toastr.error(msg);
+            }
+        });
+    </script>
+}
