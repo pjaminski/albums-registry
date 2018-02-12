@@ -175,6 +175,7 @@
     <Compile Include="Controllers\PublishersController.cs" />
     <Compile Include="DataAccess\Repositories\AdminModeRepository.cs" />
     <Compile Include="DataAccess\AlbumsRegistryDbContext.cs" />
+    <Compile Include="DataAccess\Repositories\IAdminModeRepository.cs" />
     <Compile Include="DataAccess\Repositories\IPublishersRepository.cs" />
     <Compile Include="Migrations\201801231318577_NavigationProperties.cs" />
     <Compile Include="Migrations\201801231318577_NavigationProperties.Designer.cs">
@@ -189,6 +190,8 @@
       <DependentUpon>201802070840212_AddAdminMode.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminMode.cs" />
+    <Compile Include="Services\AdminModeService.cs" />
+    <Compile Include="Services\IAdminModeService.cs" />
     <Compile Include="Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

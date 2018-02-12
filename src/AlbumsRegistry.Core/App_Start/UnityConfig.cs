@@ -1,6 +1,7 @@
 using System;
 using AlbumsRegistry.Core.DataAccess.Repositories;
 using AlbumsRegistry.Core.DataAccess.Repositories.FakeRepositories;
+using AlbumsRegistry.Core.Services;
 using Unity;
 
 namespace AlbumsRegistry.Core
@@ -44,6 +45,8 @@ namespace AlbumsRegistry.Core
             container.RegisterType<IArtistsRepository, FakeArtistsRepository>();
             container.RegisterType<IPublishersRepository, FakePublishersRepository>();
             container.RegisterType<IAlbumsRepository, FakeAlbumsRepository>();
+            container.RegisterType<IAdminModeRepository, AdminModeRepository>();
+            container.RegisterType<IAdminModeService, AdminModeService>();
         }
     }
 }

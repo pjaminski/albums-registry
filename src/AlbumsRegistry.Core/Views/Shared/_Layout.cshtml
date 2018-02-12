@@ -22,6 +22,29 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink(Strings.Layout_Artists, "Index", "Artists")</li>
                     <li>@Html.ActionLink(Strings.Layout_Publishers, "Index", "Publishers")</li>
+                    <li>
+                        @{
+                            var adminMode = false;
+
+                            if (Request.Cookies["am"] != null)
+                            {
+                                adminMode = Request.Cookies["am"].Value == "1";
+                            }
+
+                            if (adminMode == false)
+                            {
+                                <a href="@Url.Action("Activate", "AdminMode")">
+                                    <span class="glyphicon glyphicon-log-in" aria-hidden="true" title="@Strings.AdminMode_Activate_Title"></span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Deactivate", "AdminMode")">
+                                    <span class="glyphicon glyphicon-log-out" aria-hidden="true" title="@Strings.AdminMode_Dectivate_Action"></span>
+                                </a>
+                            }
+                        }
+                    </li>
                 </ul>
             </div>
         </div>

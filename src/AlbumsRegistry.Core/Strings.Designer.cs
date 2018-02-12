@@ -106,6 +106,15 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wyloguj.
+        /// </summary>
+        public static string AdminMode_Dectivate_Action {
+            get {
+                return ResourceManager.GetString("AdminMode_Dectivate_Action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nowy album.
         /// </summary>
         public static string Albums_Create_Title {

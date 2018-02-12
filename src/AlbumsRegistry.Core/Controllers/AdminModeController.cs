@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using AlbumsRegistry.Core.DataAccess.Repositories;
-using AlbumsRegistry.Core.Models;
+﻿using System.Web.Mvc;
+using AlbumsRegistry.Core.Services;
 using AlbumsRegistry.Core.ViewModels;
 
 namespace AlbumsRegistry.Core.Controllers
 {
     public class AdminModeController : Controller
     {
+        private readonly IAdminModeService _adminModeService;
+
+        public AdminModeController(IAdminModeService adminModeService)
+        {
+            _adminModeService = adminModeService;
+        }
+
         // GET: AdminMode
         public ActionResult Activate()
         {
@@ -20,13 +22,11 @@ namespace AlbumsRegistry.Core.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Activate(ActivationAdminModeViewModel model)
-        {
-            var adminModeRepository = new AdminModeRepository();
-            var adminModeInfo = adminModeRepository.GetAdminModeInfo();
-           
-            if (CheckValidPassword(model.Password, adminModeInfo.PasswordCore))
+        {      
+            if (_adminModeService.IsPasswordValid(model.Password))
             {
-                
+                _adminModeService.ActivateAdminMode(HttpContext.Response.Cookies);
+                return RedirectToAction("Index", "Albums");
             }
 
             model.ErrorMessage = Strings.AdminMode_Activate_Error;
@@ -35,18 +35,8 @@ namespace AlbumsRegistry.Core.Controllers
 
         public ActionResult Deactivate()
         {
-            //toastr pomaranczowy
-            return View("Index", "Albums");
+            _adminModeService.DeactivateAdminMode(HttpContext.Request.Cookies, HttpContext.Response.Cookies);
+            return RedirectToAction("Index", "Albums");
         }
-
-        private bool CheckValidPassword(string password, string passwordCore)
-        {
-            //todo: decrypt passwordCore
-            //todo: check if cleanPasswordCore contains password
-            //todo: evaluate current suffix and compare with passed suffix
-
-            return true;
-        }
-
     }
 }

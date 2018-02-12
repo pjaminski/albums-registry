@@ -4,7 +4,7 @@ using AlbumsRegistry.Core.Models;
 
 namespace AlbumsRegistry.Core.DataAccess.Repositories
 {
-    public class AdminModeRepository
+    public class AdminModeRepository : IAdminModeRepository
     {
         private readonly AlbumsRegistryDbContext _dbContext;
 
