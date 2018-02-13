@@ -6,7 +6,7 @@ namespace AlbumsRegistry.Core.Services
     {
         bool IsPasswordValid(string password);
 
-        bool IsAdminModeActive();
+        bool IsAdminModeActive(HttpCookieCollection cookies);
 
         void ActivateAdminMode(HttpCookieCollection cookies);
 

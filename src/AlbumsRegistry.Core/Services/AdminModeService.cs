@@ -7,6 +7,8 @@ namespace AlbumsRegistry.Core.Services
     public class AdminModeService : IAdminModeService
     {
         private readonly IAdminModeRepository _adminModeRepository;
+        private readonly string _cookieName = "am";
+        private readonly string _cookieValue = "1";
 
         public AdminModeService(IAdminModeRepository adminModeRepository)
         {
@@ -15,16 +17,17 @@ namespace AlbumsRegistry.Core.Services
 
         public bool IsPasswordValid(string password)
         {
-            //todo: decrypt passwordCore
-            //todo: check if cleanPasswordCore contains password
-            //todo: evaluate current suffix and compare with passed suffix
-
-            return true;
+            var adminModeInfo = _adminModeRepository.GetAdminModeInfo();
+            return adminModeInfo.GetCleanPassword() == password;
         }
 
-        public bool IsAdminModeActive()
+        public bool IsAdminModeActive(HttpCookieCollection cookies)
         {
-            throw new NotImplementedException();
+            var adminModeInfo = _adminModeRepository.GetAdminModeInfo();
+            var hours = adminModeInfo.ActiveSinceDate.GetValueOrDefault().Subtract(DateTime.UtcNow).Hours;
+            var isCookieAdded = cookies[_cookieName] != null && cookies[_cookieName].Value == _cookieValue;
+
+            return adminModeInfo.IsActive && hours < 6 && isCookieAdded;
         }
 
         public void ActivateAdminMode(HttpCookieCollection cookies)
@@ -32,31 +35,28 @@ namespace AlbumsRegistry.Core.Services
             var adminModeInfo = _adminModeRepository.GetAdminModeInfo();
             var dateTimeNow = DateTime.Now;
 
-            if (adminModeInfo != null)
-            {
-                adminModeInfo.IsActive = true;
-                adminModeInfo.ActiveSinceDate = dateTimeNow;
+            adminModeInfo.IsActive = true;
+            adminModeInfo.ActiveSinceDate = dateTimeNow;
 
-                _adminModeRepository.SaveAdminModeInfo(adminModeInfo);
-            }
+            _adminModeRepository.SaveAdminModeInfo(adminModeInfo);
 
-            cookies.Add(new HttpCookie("am")
+            cookies.Add(new HttpCookie(_cookieName)
             {
                 Expires = dateTimeNow.AddHours(6),
-                Value = "1"
+                Value = _cookieValue
             });
         }
 
         public void DeactivateAdminMode(HttpCookieCollection requestCookies, HttpCookieCollection responseCookies)
         {
-            //var adminModeInfo = _adminModeRepository.GetAdminModeInfo();
-            //adminModeInfo.IsActive = false;
-            //adminModeInfo.ActiveSinceDate = null;
-            //_adminModeRepository.SaveAdminModeInfo(adminModeInfo);
+            var adminModeInfo = _adminModeRepository.GetAdminModeInfo();
+            adminModeInfo.IsActive = false;
+            adminModeInfo.ActiveSinceDate = null;
+            _adminModeRepository.SaveAdminModeInfo(adminModeInfo);
 
-            if (requestCookies["am"] != null && responseCookies["am"] != null)
+            if (requestCookies[_cookieName] != null && responseCookies[_cookieName] != null)
             {
-                responseCookies["am"].Expires = DateTime.Now.AddDays(-1);
+                responseCookies[_cookieName].Expires = DateTime.Now.AddDays(-1);
             }
         }
     }

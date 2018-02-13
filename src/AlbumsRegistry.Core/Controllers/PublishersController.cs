@@ -2,16 +2,19 @@
 using System.Web.Mvc;
 using AlbumsRegistry.Core.DataAccess.Repositories;
 using AlbumsRegistry.Core.Models;
+using AlbumsRegistry.Core.Services;
 
 namespace AlbumsRegistry.Core.Controllers
 {
     public class PublishersController : Controller
     {
         private readonly IPublishersRepository _publishersRepository;
+        private readonly IAdminModeService _adminModeService;
 
-        public PublishersController(IPublishersRepository publishersRepository)
+        public PublishersController(IPublishersRepository publishersRepository, IAdminModeService adminModeService)
         {
             _publishersRepository = publishersRepository;
+            _adminModeService = adminModeService;
         }
 
         // GET: Publishers
@@ -23,6 +26,11 @@ namespace AlbumsRegistry.Core.Controllers
         // GET: Publishers/Create
         public ActionResult Create()
         {
+            if (_adminModeService.IsAdminModeActive(HttpContext.Request.Cookies) == false)
+            {
+                return RedirectToAction("Activate", "AdminMode");
+            }
+
             return View();
         }
 
@@ -33,19 +41,30 @@ namespace AlbumsRegistry.Core.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,City")] Publisher publisher)
         {
-            if (ModelState.IsValid)
+            if (_adminModeService.IsAdminModeActive(HttpContext.Request.Cookies) == false)
             {
-                _publishersRepository.CreatePublisher(publisher);
-                TempData["Msg"] = Strings.Publishers_Index_Added;
-                return RedirectToAction("Index");
+                return RedirectToAction("Activate", "AdminMode");
             }
 
-            return View(publisher);
+            if (ModelState.IsValid == false)
+            {
+                return View(publisher);
+            }
+
+            _publishersRepository.CreatePublisher(publisher);
+            TempData["Msg"] = Strings.Publishers_Index_Added;
+
+            return RedirectToAction("Index");
         }
 
         // GET: Publishers/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (_adminModeService.IsAdminModeActive(HttpContext.Request.Cookies) == false)
+            {
+                return RedirectToAction("Activate", "AdminMode");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -68,13 +87,20 @@ namespace AlbumsRegistry.Core.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,City")] Publisher publisher)
         {
-            if (ModelState.IsValid)
+            if (_adminModeService.IsAdminModeActive(HttpContext.Request.Cookies) == false)
             {
-                _publishersRepository.UpdatePublisher(publisher);
-                TempData["Msg"] = Strings.General_ChangesSaved;
-                return RedirectToAction("Index");
+                return RedirectToAction("Activate", "AdminMode");
             }
-            return View(publisher);
+
+            if (ModelState.IsValid == false)
+            {
+                return View(publisher);
+            }
+
+            _publishersRepository.UpdatePublisher(publisher);
+            TempData["Msg"] = Strings.General_ChangesSaved;
+
+            return RedirectToAction("Index");
         }
     }
 }
