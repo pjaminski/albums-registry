@@ -22,7 +22,7 @@
                     @Html.Label("Password", Strings.AdminMode_Activate_Password, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password" } })
-                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.Password, string.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@
     <script>
         $(function () {
             @{
-                var errorMessage = Model != null ? Model.ErrorMessage : "";
+                var errorMessage = Model != null ? Model.ErrorMessage : string.Empty;
             }
             var msg = "@errorMessage";
             if (msg) {

@@ -14,6 +14,9 @@ namespace AlbumsRegistry.Core.Models
             ErrorMessageResourceName = "General_Validation_ValueIsLimited")]
         public string Title { get; set; }
 
+        [Range(0, int.MaxValue,
+            ErrorMessageResourceType = typeof(Strings),
+            ErrorMessageResourceName = "General_Validation_MinValue")]
         public int? ReleaseYear { get; set; }
 
         public virtual Artist Artist { get; set; }

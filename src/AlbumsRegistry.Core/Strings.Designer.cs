@@ -331,6 +331,24 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Brak wyników.
+        /// </summary>
+        public static string General_Index_NoResults {
+            get {
+                return ResourceManager.GetString("General_Index_NoResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wartość nie może być ujemna.
+        /// </summary>
+        public static string General_Validation_MinValue {
+            get {
+                return ResourceManager.GetString("General_Validation_MinValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wartość pola może mieć max. 255 znaków.
         /// </summary>
         public static string General_Validation_ValueIsLimited {

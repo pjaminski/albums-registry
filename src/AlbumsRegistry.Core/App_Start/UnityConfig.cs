@@ -38,13 +38,9 @@ namespace AlbumsRegistry.Core
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            // NOTE: To load from web.config uncomment the line below.
-            // Make sure to add a Unity.Configuration to the using statements.
-            // container.LoadConfiguration();
-
-            container.RegisterType<IArtistsRepository, FakeArtistsRepository>();
-            container.RegisterType<IPublishersRepository, FakePublishersRepository>();
-            container.RegisterType<IAlbumsRepository, FakeAlbumsRepository>();
+            container.RegisterType<IArtistsRepository, ArtistsRepository>();
+            container.RegisterType<IPublishersRepository, PublishersRepository>();
+            container.RegisterType<IAlbumsRepository, AlbumsRepository>();
             container.RegisterType<IAdminModeRepository, AdminModeRepository>();
             container.RegisterType<IAdminModeService, AdminModeService>();
         }

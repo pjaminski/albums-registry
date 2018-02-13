@@ -207,6 +207,12 @@
   <data name="General_Headers_Title" xml:space="preserve">
     <value>Tytuł</value>
   </data>
+  <data name="General_Index_NoResults" xml:space="preserve">
+    <value>Brak wyników</value>
+  </data>
+  <data name="General_Validation_MinValue" xml:space="preserve">
+    <value>Wartość nie może być ujemna</value>
+  </data>
   <data name="General_Validation_ValueIsLimited" xml:space="preserve">
     <value>Wartość pola może mieć max. 255 znaków</value>
   </data>

@@ -46,47 +46,54 @@
 
 <div class="row">
     <div class="col-xs-12">
-        <table class="table table-condensed">
-            <tr>
-                <th>
-                    @Strings.General_Headers_Artist
-                </th>
-                <th>
-                    @Strings.General_Headers_Title
-                </th>
-                <th>
-                    @Strings.General_Headers_ReleaseYear
-                </th>
-                <th>
-                    @Strings.General_Headers_Publisher
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model.Albums)
-            {
+        @if (Model.Albums.Any())
+        {
+            <table class="table table-condensed">
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Artist.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ReleaseYear)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Publisher.Name)
-                    </td>
-                    <td>
-                        <a href="@Url.Action("Edit", new {id = item.Id})">
-                            <span class="glyphicon glyphicon-pencil" aria-hidden="true" title="@Strings.General_Actions_Edit"></span>
-                        </a>
-                    </td>
+                    <th>
+                        @Strings.General_Headers_Artist
+                    </th>
+                    <th>
+                        @Strings.General_Headers_Title
+                    </th>
+                    <th>
+                        @Strings.General_Headers_ReleaseYear
+                    </th>
+                    <th>
+                        @Strings.General_Headers_Publisher
+                    </th>
+                    <th></th>
                 </tr>
-            }
 
-        </table>
+                @foreach (var item in Model.Albums)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Artist.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReleaseYear)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Publisher.Name)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", new {id = item.Id})">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true" title="@Strings.General_Actions_Edit"></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        }
+        else
+        {
+            <p>@Strings.General_Index_NoResults</p>
+        }
     </div>
 </div>
 

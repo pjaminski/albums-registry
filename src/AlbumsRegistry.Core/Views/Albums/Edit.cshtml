@@ -30,7 +30,7 @@
                     @Html.Label("Title", Strings.General_Headers_Title, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.Title, string.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@
                     @Html.Label("ReleaseYear", Strings.General_Headers_ReleaseYear, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.ReleaseYear, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.ReleaseYear, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.ReleaseYear, string.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -46,7 +46,7 @@
                     @Html.Label("ArtistId", Strings.General_Headers_Artist, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.DropDownList("ArtistId", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.ArtistId, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.ArtistId, string.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -54,7 +54,7 @@
                     @Html.Label("PublisherId", Strings.General_Headers_Publisher, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.DropDownList("PublisherId", null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.PublisherId, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.PublisherId, string.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
 
