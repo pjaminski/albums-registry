@@ -31,6 +31,8 @@ namespace AlbumsRegistry.Core
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/toastr.css"));
+
+            bundles.Add(new LessBundle("~/Content/less").Include("~/Content/*.less"));
         }
     }
 }

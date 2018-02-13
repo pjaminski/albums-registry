@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title | Albums Registry</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/less")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -55,7 +56,7 @@
             <div class="col-xs-12">
                 <hr />
                 <footer>
-                    <p>&copy; @DateTime.Now.Year - Piotr Jamiński</p>
+                    <p>&copy; @DateTime.Now.Year - <a href="mailto:piotr.jaminski@gmail.com">Piotr Jamiński</a></p>
                 </footer>
             </div>
         </div>

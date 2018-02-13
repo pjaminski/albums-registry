@@ -1,0 +1,144 @@
+﻿@color-primary: #f4decb;
+@color-secondary: #94618e;
+@color-border: white;
+@color-basic: black;
+@widh280: 280px;
+
+body {
+    background-color: @color-primary;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dl-horizontal {
+    dt {
+        color-white-space: normal;
+    }
+}
+
+input {
+    max-width: @widh280;
+}
+
+select {
+    max-width: @widh280;
+}
+
+textarea {
+    max-width: @widh280;
+}
+
+.search-form {
+    float: right;
+    padding-bottom: 5px;
+    width: 200px;
+}
+
+.no-left-border {
+    border-left-width: 0;
+}
+
+.navbar-inverse {
+    background-color: @color-secondary;
+    border: 0;
+
+    .navbar-collapse {
+        border-color: @color-border;
+    }
+
+    .navbar-form {
+        border-color: @color-border;
+    }
+
+    .navbar-toggle {
+        border-color: @color-border;
+        color: @color-border;
+
+        &:hover {
+            background-color: @color-primary;
+        }
+
+        &:focus {
+            background-color: @color-primary;
+        }
+    }
+
+    .navbar-brand {
+        border-color: @color-border;
+        color: @color-border;
+
+        &:hover {
+            color: @color-primary;
+        }
+
+        &:focus {
+            color: @color-primary;
+        }
+    }
+
+    .navbar-nav > li > a {
+        border-color: @color-border;
+        color: @color-border;
+
+        &:hover {
+            color: @color-primary;
+        }
+    }
+}
+
+hr {
+    border-color: @color-secondary;
+}
+
+a {
+    color: @color-secondary;
+
+    &:hover {
+        color: @color-basic;
+    }
+
+    &:active {
+        color: @color-basic;
+    }
+}
+
+.btn-default {
+    background-color: @color-secondary;
+    border-color: @color-secondary;
+    color: @color-border;
+
+    &:hover {
+        background-color: @color-primary;
+        border-color: @color-secondary;
+        color: @color-secondary;
+    }
+
+    &:active {
+        background-color: @color-primary;
+        border-color: @color-secondary;
+        color: @color-secondary;
+    }
+}
+
+.form-control {
+    border-color: @color-secondary;
+
+    &:focus {
+        border-color: @color-secondary;
+    }
+}
+
+.table thead > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    border-color: @color-secondary;
+}
+
+.table {
+    tbody > tr > th {
+        border-top: 0;
+    }
+}
