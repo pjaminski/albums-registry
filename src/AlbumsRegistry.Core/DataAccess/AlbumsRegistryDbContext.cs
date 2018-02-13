@@ -12,6 +12,8 @@ namespace AlbumsRegistry.Core.DataAccess
 
         public DbSet<Album> Albums { get; set; }
 
+        public DbSet<AdminMode> AdminMode { get; set; }
+
         public AlbumsRegistryDbContext()
         {
             Database.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["AlbumsRegistryDb"].ConnectionString;

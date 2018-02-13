@@ -2,16 +2,19 @@
 using System.Web.Mvc;
 using AlbumsRegistry.Core.DataAccess.Repositories;
 using AlbumsRegistry.Core.Models;
+using AlbumsRegistry.Core.Services;
 
 namespace AlbumsRegistry.Core.Controllers
 {
     public class ArtistsController : Controller
     {
         private readonly IArtistsRepository _artistsRepository;
+        private readonly IAdminModeService _adminModeService;
 
-        public ArtistsController(IArtistsRepository artistsRepository)
+        public ArtistsController(IArtistsRepository artistsRepository, IAdminModeService adminModeService)
         {
             _artistsRepository = artistsRepository;
+            _adminModeService = adminModeService;
         }
 
         // GET: Artists
@@ -23,6 +26,11 @@ namespace AlbumsRegistry.Core.Controllers
         // GET: Artists/Create
         public ActionResult Create()
         {
+            if (_adminModeService.IsAdminModeActive(HttpContext.Request.Cookies) == false)
+            {
+                return RedirectToAction("Activate", "AdminMode");
+            }
+
             return View();
         }
 
@@ -31,19 +39,31 @@ namespace AlbumsRegistry.Core.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,City")] Artist artist)
         {
-            if (ModelState.IsValid)
+            if (_adminModeService.IsAdminModeActive(HttpContext.Request.Cookies) == false)
             {
-                _artistsRepository.CreateArtist(artist);
-                TempData["Msg"] = Strings.Artists_Index_Added;
-                return RedirectToAction("Index");
+                return RedirectToAction("Activate", "AdminMode");
             }
 
-            return View(artist);
+            if (ModelState.IsValid == false)
+            {
+                return View(artist);
+            }
+
+            _artistsRepository.CreateArtist(artist);
+            TempData["Msg"] = Strings.Artists_Index_Added;
+
+            return RedirectToAction("Index");
+
         }
 
         // GET: Artists/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (_adminModeService.IsAdminModeActive(HttpContext.Request.Cookies) == false)
+            {
+                return RedirectToAction("Activate", "AdminMode");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -64,14 +84,20 @@ namespace AlbumsRegistry.Core.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,City")] Artist artist)
         {
-            if (ModelState.IsValid)
-            {;
-                _artistsRepository.UpdateArtist(artist);
-                TempData["Msg"] = Strings.General_ChangesSaved;
-                return RedirectToAction("Index");
+            if (_adminModeService.IsAdminModeActive(HttpContext.Request.Cookies) == false)
+            {
+                return RedirectToAction("Activate", "AdminMode");
             }
 
-            return View(artist);
+            if (ModelState.IsValid == false)
+            {
+                return View(artist);
+            }
+
+            _artistsRepository.UpdateArtist(artist);
+            TempData["Msg"] = Strings.General_ChangesSaved;
+
+            return RedirectToAction("Index");
         }
     }
 }

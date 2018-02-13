@@ -61,6 +61,60 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Błąd logowania!.
+        /// </summary>
+        public static string AdminMode_Activate_Error {
+            get {
+                return ResourceManager.GetString("AdminMode_Activate_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hasło.
+        /// </summary>
+        public static string AdminMode_Activate_Password {
+            get {
+                return ResourceManager.GetString("AdminMode_Activate_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Powrót.
+        /// </summary>
+        public static string AdminMode_Activate_Return {
+            get {
+                return ResourceManager.GetString("AdminMode_Activate_Return", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zatwierdź.
+        /// </summary>
+        public static string AdminMode_Activate_Submit {
+            get {
+                return ResourceManager.GetString("AdminMode_Activate_Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logowanie.
+        /// </summary>
+        public static string AdminMode_Activate_Title {
+            get {
+                return ResourceManager.GetString("AdminMode_Activate_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wyloguj.
+        /// </summary>
+        public static string AdminMode_Dectivate_Action {
+            get {
+                return ResourceManager.GetString("AdminMode_Dectivate_Action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nowy album.
         /// </summary>
         public static string Albums_Create_Title {
