@@ -241,6 +241,24 @@ namespace AlbumsRegistry.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Następna strona.
+        /// </summary>
+        public static string General_Actions_NextPage {
+            get {
+                return ResourceManager.GetString("General_Actions_NextPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poprzednia strona.
+        /// </summary>
+        public static string General_Actions_PrevPage {
+            get {
+                return ResourceManager.GetString("General_Actions_PrevPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zapisz.
         /// </summary>
         public static string General_Actions_Save {

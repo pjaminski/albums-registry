@@ -177,6 +177,12 @@
   <data name="General_Actions_Edit" xml:space="preserve">
     <value>Zmień</value>
   </data>
+  <data name="General_Actions_NextPage" xml:space="preserve">
+    <value>Następna strona</value>
+  </data>
+  <data name="General_Actions_PrevPage" xml:space="preserve">
+    <value>Poprzednia strona</value>
+  </data>
   <data name="General_Actions_Save" xml:space="preserve">
     <value>Zapisz</value>
   </data>

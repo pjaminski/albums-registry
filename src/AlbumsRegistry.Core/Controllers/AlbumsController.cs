@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Linq;
+using System.Net;
 using System.Web.Mvc;
 using AlbumsRegistry.Core.DataAccess.Repositories;
 using AlbumsRegistry.Core.Models;
@@ -14,6 +15,8 @@ namespace AlbumsRegistry.Core.Controllers
         private readonly IPublishersRepository _publishersRepository;
         private readonly IAdminModeService _adminModeService;
 
+        private const int PageSize = 40;
+
         public AlbumsController(
             IAlbumsRepository albumsRepository, 
             IArtistsRepository artistsRepository, 
@@ -27,11 +30,19 @@ namespace AlbumsRegistry.Core.Controllers
         }
 
         // GET: Albums
-        public ActionResult Index()
+        public ActionResult Index(int page = 0)
         {
+            var albums = _albumsRepository.GetAlbums().ToList();
+            var albumsTotalCount = albums.Count;
+            var pageResult = albums.Skip(page * PageSize).Take(PageSize);
+
+            ViewBag.MaxPage = albumsTotalCount / PageSize - (albumsTotalCount % PageSize == 0 ? 1 : 0);
+            ViewBag.Page = page;
+
             return View(new AlbumsIndexViewModel
             {
-                Albums = _albumsRepository.GetAlbums()
+                Albums = pageResult,
+                TotalCount = albumsTotalCount
             });
         }
     
@@ -120,11 +131,19 @@ namespace AlbumsRegistry.Core.Controllers
         [HttpPost]
         public ActionResult Search(string searchTerm)
         {
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                return RedirectToAction("Index");
+            }
+
+            var searchedAlbums = _albumsRepository.GetAlbumsBySearchTerm(searchTerm).ToList();
+
             return View("Index",
                 new AlbumsIndexViewModel()
                 {
-                    Albums = _albumsRepository.GetAlbumsBySearchTerm(searchTerm),
-                    SearchFilter = searchTerm
+                    Albums = searchedAlbums,
+                    SearchFilter = searchTerm,
+                    TotalCount = searchedAlbums.Count
                 }
             );
         }

@@ -8,5 +8,7 @@ namespace AlbumsRegistry.Core.ViewModels
         public IEnumerable<Album> Albums { get; set; }
 
         public string SearchFilter { get; set; }
+
+        public int TotalCount { get; set; }
     }
 }
